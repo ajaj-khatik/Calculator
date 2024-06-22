@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Grid, Text } from "@chakra-ui/react";
 import { useState } from "react";
+import ColorModeSwitch from "./ColorModeSwitch";
 
 const Home = () => {
   const [display, setDisplay] = useState("");
@@ -32,7 +33,8 @@ const Home = () => {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        mt={10}
+        flexDirection="column"
+        mt={2}
         fontSize="2xl"
         fontWeight="bold"
         color="teal.500"
@@ -43,7 +45,7 @@ const Home = () => {
         Calculator
       </Text>
 
-      <Flex height="100vh" justifyContent="center" alignItems="center" p={4}>
+      <Flex height="100vh" justifyContent="center" alignItems="center">
         <Box
           p={4}
           maxW={{ base: "90%", sm: "80%", md: "400px" }}
@@ -75,6 +77,9 @@ const Home = () => {
           >
             Clear
           </Button>
+          <Box marginBottom={2}>
+            <ColorModeSwitch />
+          </Box>
           <Grid templateColumns="repeat(4, 1fr)" gap={2}>
             {["7", "8", "9", "/"].map((char) => (
               <Button
